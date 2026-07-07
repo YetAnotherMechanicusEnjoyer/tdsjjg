@@ -2,9 +2,10 @@
   #define AASSETHPP
 
 #include <cstddef>
+#include "Graphics/Assets/IAsset.hpp"
 
 namespace Tdsjjg {
-class AAsset {
+class AAsset : public IAsset {
 private:
   std::size_t _id;
 
@@ -16,7 +17,7 @@ public:
   AAsset(AAsset&&) noexcept = default;
   AAsset& operator=(AAsset&&) noexcept = default;
 
-  std::size_t getId(void);
+  std::size_t getId(void) { return _id; }
 };
 }
 

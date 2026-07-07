@@ -7,19 +7,23 @@
 
 #include "Common.hpp"
 #include <memory>
+#include <vector>
 #include "Scenes/IScene.hpp"
 #include "Graphics/IGraphics.hpp"
+#include "Jetpack/Player.hpp"
 
 namespace Tdsjjg {
 class Core {
 private:
-  std::vector<IScene> _scenes;
+  std::unique_ptr<Player> _player;
+  std::vector<std::unique_ptr<IScene>> _scenes;
   std::unique_ptr<IGraphics> _graphics;
   std::vector<InputKey> _keys;
   std::vector<InputAction> _actions;
+  size_t _currentSceneIdx;
 
   std::unique_ptr<IGraphics> loadGraphics(void);
-  std::vector<IScene> loadScenes(void);
+  std::vector<std::unique_ptr<IScene>> loadScenes(void);
   void handleGlobalInput(void);
 
 public:
@@ -35,4 +39,4 @@ public:
 };
 }
 
-#endif /* CORE */
+#endif

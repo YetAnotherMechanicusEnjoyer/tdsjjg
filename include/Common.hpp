@@ -25,11 +25,6 @@ namespace Tdsjjg {
     Action
   };
 
-  struct KeyEvent {
-    InputAction action {InputAction::None};
-    char text {'\0'};
-  };
-
   struct Vec2i {
     int x {0};
     int y {0};

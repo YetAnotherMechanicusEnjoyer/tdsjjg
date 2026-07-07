@@ -13,7 +13,7 @@ public:
     std::function<void()> action;
   };
 
-  MenuSelector(void) : _selectedIdx(0) {}
+  MenuSelector(void);
 
   ~MenuSelector(void) = default;
   MenuSelector(const MenuSelector&) = delete;
@@ -21,6 +21,8 @@ public:
   MenuSelector(MenuSelector&&) noexcept = default;
   MenuSelector& operator=(MenuSelector&&) noexcept = default;
 
+  std::optional<InputAction> onInput(std::vector<InputAction>& actions) override;
+  void update(void) override;
   std::string run(void);
 
 private:

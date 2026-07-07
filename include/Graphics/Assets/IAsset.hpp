@@ -4,6 +4,7 @@
 namespace Tdsjjg {
 class IAsset {
 public:
+  IAsset() = default;
   virtual ~IAsset() = default;
   IAsset(const IAsset&) = delete;
   IAsset& operator=(const IAsset&) = delete;

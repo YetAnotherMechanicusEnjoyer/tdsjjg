@@ -20,6 +20,9 @@ public:
   std::filesystem::path getFilePath(void);
   void setFilePath(std::filesystem::path filePath);
 };
+
+inline std::filesystem::path Font::getFilePath(void) { return _filePath; }
+inline void Font::setFilePath(std::filesystem::path filePath) { _filePath = filePath; }
 }
 
 #endif // !FONTHPP
