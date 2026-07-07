@@ -1,0 +1,9 @@
+tdsjjg
+.old
+compile_commands.json
+*.o
+.obj/
+.cache
+*.nts
+build/
+vgcore*
